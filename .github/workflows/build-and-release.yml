@@ -1,0 +1,84 @@
+name: Build and Release
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - "rule-lists/**"
+      - "route-profiles/**"
+      - "source/**"
+      - ".github/workflows/build-and-release.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build source rule-sets
+        run: python source/throne_route_forge/build_rule_sets.py --strict
+
+      - name: Validate generated rule-set JSON
+        run: python source/throne_route_forge/validate_rule_sets.py
+
+      - name: Install sing-box
+        shell: bash
+        run: |
+          set -euo pipefail
+          api="https://api.github.com/repos/SagerNet/sing-box/releases/latest"
+          url="$(curl -fsSL "$api" | jq -r '.assets[] | select(.name | test("linux-amd64.*tar.gz$")) | .browser_download_url' | head -n 1)"
+          test -n "$url"
+          curl -fsSL "$url" -o /tmp/sing-box.tar.gz
+          mkdir -p /tmp/sing-box
+          tar -xzf /tmp/sing-box.tar.gz -C /tmp/sing-box --strip-components=1
+          sudo install -m 0755 /tmp/sing-box/sing-box /usr/local/bin/sing-box
+          sing-box version
+
+      - name: Compile binary rule-sets
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in release-assets/{proxy,direct,reject}-{domains,ips}.json; do
+            sing-box rule-set compile --output "${file%.json}.srs" "$file"
+          done
+
+      - name: Copy profile assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp route-profiles/throne/minimal-route-profile.json release-assets/route-profile-throne-minimal.json
+          cp route-profiles/throne/full-route-profile.json release-assets/route-profile-throne-full.json
+          cp route-profiles/sing-box/route-snippet.json release-assets/sing-box-route-snippet.json
+          cp route-profiles/sing-box/rule-sets-snippet.json release-assets/sing-box-rule-sets-snippet.json
+
+      - name: Write checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          find release-assets -maxdepth 1 -type f ! -name checksums.txt ! -name .gitkeep -print0 | sort -z | xargs -0 sha256sum > release-assets/checksums.txt
+
+      - name: Publish latest release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest Routing Build
+          body: |
+            Automated routing build.
+
+            Use files from this release in Throne or sing-box.
+          files: release-assets/*
+          make_latest: true
