@@ -55,12 +55,26 @@ documentation/                setup and source notes
 After the first successful GitHub Actions run, use release links like these:
 
 ```text
-https://github.com/YOUR_USERNAME/throne-route-forge/releases/latest/download/proxy-domains.srs
-https://github.com/YOUR_USERNAME/throne-route-forge/releases/latest/download/proxy-ips.srs
-https://github.com/YOUR_USERNAME/throne-route-forge/releases/latest/download/reject-domains.srs
+https://github.com/acc-holo-dev/throne-route-forge/releases/latest/download/proxy-domains.srs
+https://github.com/acc-holo-dev/throne-route-forge/releases/latest/download/proxy-ips.srs
+https://github.com/acc-holo-dev/throne-route-forge/releases/latest/download/reject-domains.srs
 ```
 
-Replace `YOUR_USERNAME` with your GitHub username or organization.
+The included profile examples point to `acc-holo-dev/throne-route-forge`.
+Replace the owner only if you fork or move the repository.
+
+## Re-filter Remote Rule-Sets
+
+The Throne and sing-box profile examples also include Re-filter as ready-made
+remote `.srs` rule-sets for proxy routing:
+
+```text
+https://github.com/1andrevich/Re-filter-lists/releases/latest/download/ruleset-domain-refilter_domains.srs
+https://github.com/1andrevich/Re-filter-lists/releases/latest/download/ruleset-ip-refilter_ipsum.srs
+```
+
+These files are already compiled sing-box rule-sets. Do not put `.srs` URLs into
+`external-includes.json`; that file is only for raw text domain/IP lists.
 
 ## Local Rules
 

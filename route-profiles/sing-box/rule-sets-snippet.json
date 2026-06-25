@@ -5,43 +5,65 @@
         "type": "remote",
         "tag": "reject-domains",
         "format": "binary",
-        "url": "https://github.com/YOUR_USERNAME/throne-route-forge/releases/latest/download/reject-domains.srs",
-        "update_interval": "24h"
+        "url": "https://github.com/acc-holo-dev/throne-route-forge/releases/latest/download/reject-domains.srs",
+        "update_interval": "24h",
+        "download_detour": "direct"
       },
       {
         "type": "remote",
         "tag": "reject-ips",
         "format": "binary",
-        "url": "https://github.com/YOUR_USERNAME/throne-route-forge/releases/latest/download/reject-ips.srs",
-        "update_interval": "24h"
+        "url": "https://github.com/acc-holo-dev/throne-route-forge/releases/latest/download/reject-ips.srs",
+        "update_interval": "24h",
+        "download_detour": "direct"
       },
       {
         "type": "remote",
         "tag": "direct-domains",
         "format": "binary",
-        "url": "https://github.com/YOUR_USERNAME/throne-route-forge/releases/latest/download/direct-domains.srs",
-        "update_interval": "24h"
+        "url": "https://github.com/acc-holo-dev/throne-route-forge/releases/latest/download/direct-domains.srs",
+        "update_interval": "24h",
+        "download_detour": "direct"
       },
       {
         "type": "remote",
         "tag": "direct-ips",
         "format": "binary",
-        "url": "https://github.com/YOUR_USERNAME/throne-route-forge/releases/latest/download/direct-ips.srs",
-        "update_interval": "24h"
+        "url": "https://github.com/acc-holo-dev/throne-route-forge/releases/latest/download/direct-ips.srs",
+        "update_interval": "24h",
+        "download_detour": "direct"
       },
       {
         "type": "remote",
         "tag": "proxy-domains",
         "format": "binary",
-        "url": "https://github.com/YOUR_USERNAME/throne-route-forge/releases/latest/download/proxy-domains.srs",
-        "update_interval": "24h"
+        "url": "https://github.com/acc-holo-dev/throne-route-forge/releases/latest/download/proxy-domains.srs",
+        "update_interval": "24h",
+        "download_detour": "direct"
       },
       {
         "type": "remote",
         "tag": "proxy-ips",
         "format": "binary",
-        "url": "https://github.com/YOUR_USERNAME/throne-route-forge/releases/latest/download/proxy-ips.srs",
-        "update_interval": "24h"
+        "url": "https://github.com/acc-holo-dev/throne-route-forge/releases/latest/download/proxy-ips.srs",
+        "update_interval": "24h",
+        "download_detour": "direct"
+      },
+      {
+        "type": "remote",
+        "tag": "refilter-domains",
+        "format": "binary",
+        "url": "https://github.com/1andrevich/Re-filter-lists/releases/latest/download/ruleset-domain-refilter_domains.srs",
+        "update_interval": "24h",
+        "download_detour": "direct"
+      },
+      {
+        "type": "remote",
+        "tag": "refilter-ipsum",
+        "format": "binary",
+        "url": "https://github.com/1andrevich/Re-filter-lists/releases/latest/download/ruleset-ip-refilter_ipsum.srs",
+        "update_interval": "24h",
+        "download_detour": "direct"
       }
     ]
   }

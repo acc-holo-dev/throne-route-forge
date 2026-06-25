@@ -27,7 +27,7 @@
       "invert": false,
       "ip_is_private": false,
       "ip_version": "",
-      "name": "Proxy via GitHub rule-sets",
+      "name": "Proxy via GitHub and Re-filter rule-sets",
       "network": "",
       "noDrop": false,
       "outboundID": -1,
@@ -36,8 +36,10 @@
       "protocol": "",
       "rejectMethod": "",
       "rule_set": [
-        "https://github.com/YOUR_USERNAME/throne-route-forge/releases/latest/download/proxy-domains.srs",
-        "https://github.com/YOUR_USERNAME/throne-route-forge/releases/latest/download/proxy-ips.srs"
+        "https://github.com/acc-holo-dev/throne-route-forge/releases/latest/download/proxy-domains.srs",
+        "https://github.com/acc-holo-dev/throne-route-forge/releases/latest/download/proxy-ips.srs",
+        "https://github.com/1andrevich/Re-filter-lists/releases/latest/download/ruleset-domain-refilter_domains.srs",
+        "https://github.com/1andrevich/Re-filter-lists/releases/latest/download/ruleset-ip-refilter_ipsum.srs"
       ],
       "simple_action": 0,
       "sniffOverrideDest": false,

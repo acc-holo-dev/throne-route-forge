@@ -18,7 +18,9 @@
       {
         "rule_set": [
           "proxy-domains",
-          "proxy-ips"
+          "proxy-ips",
+          "refilter-domains",
+          "refilter-ipsum"
         ],
         "outbound": "proxy"
       }

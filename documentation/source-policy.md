@@ -10,6 +10,10 @@ Use `rule-lists/external-includes.json` for sources that should be added to a
 target rule-set. Use `rule-lists/external-excludes.json` for sources that should
 be removed from a target rule-set after local and external includes are merged.
 
+`external-includes.json` and `external-excludes.json` are for raw text lists
+only. Precompiled `.srs` files, such as Re-filter release assets, must be
+connected directly in Throne/sing-box route profiles.
+
 Good sources are:
 
 - Plain domain lists.
