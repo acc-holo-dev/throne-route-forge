@@ -1,0 +1,3 @@
+# Domains that should be blocked locally.
+# Put ad/tracker/telemetry domains here.
+

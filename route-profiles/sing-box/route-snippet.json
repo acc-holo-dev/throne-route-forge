@@ -1,0 +1,28 @@
+{
+  "route": {
+    "rules": [
+      {
+        "rule_set": [
+          "reject-domains",
+          "reject-ips"
+        ],
+        "action": "reject"
+      },
+      {
+        "rule_set": [
+          "direct-domains",
+          "direct-ips"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "rule_set": [
+          "proxy-domains",
+          "proxy-ips"
+        ],
+        "outbound": "proxy"
+      }
+    ],
+    "final": "direct"
+  }
+}

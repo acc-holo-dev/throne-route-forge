@@ -1,0 +1,12 @@
+# Domains that should go through VPN/proxy.
+# Examples:
+# github.com
+# suffix:openai.com
+# keyword:discord
+
+github.com
+githubusercontent.com
+openai.com
+chatgpt.com
+discord.com
+discord.gg

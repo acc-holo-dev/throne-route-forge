@@ -1,0 +1,5 @@
+# IP/CIDR ranges that should go through VPN/proxy.
+# Examples:
+# 8.8.8.8/32
+# 1.1.1.0/24
+

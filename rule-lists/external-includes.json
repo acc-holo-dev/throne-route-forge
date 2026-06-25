@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "name": "example-external-proxy-domains",
+      "enabled": false,
+      "type": "domain",
+      "target": "proxy/domains",
+      "url": "https://raw.githubusercontent.com/owner/repo/main/domains.txt"
+    },
+    {
+      "name": "example-external-proxy-ips",
+      "enabled": false,
+      "type": "ip",
+      "target": "proxy/ips",
+      "url": "https://raw.githubusercontent.com/owner/repo/main/ips.txt"
+    }
+  ]
+}

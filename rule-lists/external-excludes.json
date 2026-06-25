@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "name": "example-external-excluded-proxy-domains",
+      "enabled": false,
+      "type": "domain",
+      "target": "proxy/domains",
+      "url": "https://raw.githubusercontent.com/owner/repo/main/excluded-domains.txt"
+    },
+    {
+      "name": "example-external-excluded-proxy-ips",
+      "enabled": false,
+      "type": "ip",
+      "target": "proxy/ips",
+      "url": "https://raw.githubusercontent.com/owner/repo/main/excluded-ips.txt"
+    }
+  ]
+}

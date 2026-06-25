@@ -1,0 +1,2 @@
+# Domains to remove from direct-domains after all sources are merged.
+
